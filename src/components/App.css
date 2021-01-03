@@ -1,14 +1,14 @@
 /* All */
 :root {
-  --lt: #c3e06d;
-  --md: #36343c;
-  --md50: #7c8a54;
-  --grd: #515a38;
-  --dr: #1a1a1a;
-  --ac: #b25c59;
-  --aclt: #eb7f7b;
-  --acdr: #9a3d3a;
-  --wh50: rgba(255, 255, 255, 0.5);
+  --ltGreen: #c3e06d;
+  --mdGray: #36343c;
+  --mdGreen: #7c8a54;
+  --drGreen: #515a38;
+  --black: #1a1a1a;
+  --red: #b25c59;
+  --ltRed: #eb7f7b;
+  --drRed: #9a3d3a;
+  --white50: rgba(255, 255, 255, 0.5);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Mukta&display=swap");
@@ -22,7 +22,7 @@
 /* Text */
 h1,
 h2,
-#cartText,
+.cartText,
 .num,
 .num *,
 .oldPrice,
@@ -53,10 +53,11 @@ h1,
 h2,
 h3 {
   text-align: center;
+  font-weight: normal;
 }
 
 /* Elements */
-svg * {
+svg > * {
   transition: ease 500ms;
   transform-origin: center;
 }
@@ -73,7 +74,7 @@ ul {
 }
 hr {
   border: none;
-  border-bottom: solid 2px var(--md);
+  border-bottom: solid 2px var(--mdGray);
   margin: 20px 2px;
   width: 100%;
 }
@@ -81,7 +82,7 @@ hr {
   margin: -40px 0 0;
   font-size: 24px;
   font-weight: 600;
-  background-color: var(--lt);
+  background-color: var(--ltGreen);
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
@@ -102,11 +103,8 @@ hr {
 }
 
 /* Main */
-#__next {
-  width: 100%;
-}
 body {
-  background-color: var(--lt);
+  background-color: var(--ltGreen);
   width: var(--vw);
   margin: 0;
   position: absolute;
@@ -116,7 +114,7 @@ body {
 .bodyMoved {
   left: -250px;
 }
-#content {
+#root {
   min-height: calc(100vh - 70px);
   width: 100%;
   display: grid;
@@ -138,14 +136,14 @@ input {
 }
 .fld {
   border-radius: 2px;
-  background-color: var(--grd) !important;
+  background-color: var(--drGreen) !important;
   color: white !important;
   margin: 3px 0;
   transition: ease 500ms;
-  border-left: solid 5px var(--grd);
+  border-left: solid 5px var(--drGreen);
 }
 .errFld {
-  border-left: solid 5px var(--ac) !important;
+  border-left: solid 5px var(--red) !important;
 }
 .corFld {
   border-left: solid 5px white !important;
@@ -153,11 +151,11 @@ input {
 
 input:-webkit-autofill {
   -webkit-text-fill-color: white;
-  box-shadow: inset 0 0 0 100px var(--grd);
+  box-shadow: inset 0 0 0 100px var(--drGreen);
   border-right: solid 5px white;
 }
 input::placeholder {
-  color: var(--wh50);
+  color: var(--white50);
 }
 textarea:focus,
 input:focus,
@@ -174,7 +172,7 @@ button {
 }
 .btn {
   margin: 5px 0;
-  background-color: var(--md);
+  background-color: var(--mdGray);
   color: white;
   padding: 5px 10px;
   border-radius: 2px;
@@ -185,20 +183,20 @@ button {
 .btn:focus,
 .btnlt:hover,
 .btnlt:focus {
-  box-shadow: 2px 2px var(--ac);
+  box-shadow: 2px 2px var(--red);
 }
 .btn:active {
-  color: var(--md);
+  color: var(--mdGray);
   background-color: white;
 }
 .btnlt {
   margin: 5px 0;
-  background-color: var(--lt);
+  background-color: var(--ltGreen);
   padding: 5px 10px;
   border-radius: 2px;
   display: grid;
   place-content: center;
-  border: solid 2px var(--dr);
+  border: solid 2px var(--black);
   font-weight: 600;
 }
 .icon {
@@ -207,15 +205,15 @@ button {
 
 /* Messages */
 .errMsg {
-  color: var(--ac);
+  color: var(--red);
   font-weight: bold;
   font-size: 20px;
-  border-left: solid 3px var(--ac);
+  border-left: solid 3px var(--red);
   padding-left: 10px;
   border-radius: 2px;
 }
 .msg {
-  border-left: solid 3px var(--md);
+  border-left: solid 3px var(--mdGray);
   padding-left: 10px;
   border-radius: 2px;
   max-width: 280px;
@@ -232,7 +230,7 @@ header {
   height: 70px;
   position: fixed;
   width: 100%;
-  background-color: var(--lt);
+  background-color: var(--ltGreen);
   z-index: 999;
   transition: ease 500ms;
 }
@@ -240,7 +238,7 @@ header #logoThin {
   height: 50px;
   padding: 5px;
   border-radius: 5px;
-  box-shadow: 0 0 var(--md), 0 0 var(--md);
+  box-shadow: 0 0 var(--mdGray), 0 0 var(--mdGray);
 }
 header #logoLink {
   height: 50px;
@@ -254,13 +252,13 @@ header #logoLink {
 }
 #logoLink:focus svg .dark,
 #logoLink:hover svg .dark {
-  fill: var(--lt);
+  fill: var(--ltGreen);
 }
 
 #headerUnfold {
   width: 100%;
   height: 15px;
-  background-color: var(--lt);
+  background-color: var(--ltGreen);
   position: fixed;
   z-index: 998;
   top: 0;
@@ -269,7 +267,28 @@ header #logoLink {
   cursor: pointer;
 }
 #headerUnfold:hover svg {
-  stroke: var(--ac);
+  stroke: var(--red);
+}
+
+/* Layout */
+.rowC {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.unfoldInfo {
+  color: var(--ltGreen);
+  border: var(--ltGreen) solid;
+  border-width: 1px 0;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  transition: 500ms ease;
+}
+.c {
+  display: grid;
+  place-content: center;
 }
 
 /* Navigation */
@@ -303,12 +322,12 @@ header #logoLink {
   position: fixed;
   width: 250px;
   height: 100vh;
-  background-color: var(--md);
+  background-color: var(--mdGray);
   transition: 1s ease;
   top: 0;
-  color: var(--lt);
+  color: var(--ltGreen);
   padding: 15px;
-  border-left: solid 2px var(--lt);
+  border-left: solid 2px var(--ltGreen);
 }
 #sideNav ul {
   margin-block-start: unset;
@@ -316,10 +335,10 @@ header #logoLink {
 }
 #sideNav a:hover,
 #sideNav a:focus {
-  color: var(--aclt);
+  color: var(--ltRed);
 }
 #sideNav hr {
-  border-bottom: solid 1px var(--lt);
+  border-bottom: solid 1px var(--ltGreen);
   margin: 5px 0;
 }
 .curentPage {
