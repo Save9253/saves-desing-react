@@ -3,6 +3,8 @@ import * as Ills from './Ills';
 import colors from './colors'
 import BtnWIcon from "./BtnWIcon";
 import * as Icons from './Icons'
+import './ServiceTree.css'
+
 const {mdGray,ltGreen,mdGreen} = colors
 
 function ServiceTree(props) {
@@ -14,12 +16,17 @@ function ServiceTree(props) {
         display:'grid',
         placeContent:'center',
         padding:20,
-        gridTemplateColumns:'50px auto 50px'
+        gridTemplateColumns:'20px 50px 20px auto 20px 50px 20px',
+        minHeight:500
     }}>
+      <div className='c sideLIne' style={{borderLeftWidth:2}}>
+        <div className='line'/>
+      </div>
       <div className='rowC' style={{transform:'rotate(90deg)',width:200,height:50,placeSelf:'center'}}>
         <Icons.Add size={20} color={mdGreen}/>
         <h2 style={{color:mdGreen}}>Add Graphics</h2>
       </div>
+      <div className='line'/>
       <section style={{
         display:'grid',
         placeContent:'center',
@@ -37,9 +44,13 @@ function ServiceTree(props) {
         </div>
         <p className='unfoldInfo' style={{maxWidth:275,height:fold?0:'100%',opacity:fold?0:1}}>The home page includes a basic setup for your website, three sections with information, and a navigation bar.</p>
       </section>
+      <div className='line'/>
       <div className='rowC' style={{transform:'rotate(-90deg)',width:200,height:50,placeSelf:'center'}}>
         <Icons.Add size={20} color={mdGreen}/>
         <h2 style={{color:mdGreen}}>Add Elements</h2>
+      </div>
+      <div className='c sideLIne' style={{borderRightWidth:2}}>
+        <div className='line'/>
       </div>
     </div>
   );

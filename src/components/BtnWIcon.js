@@ -4,9 +4,15 @@ import * as Icons from './Icons'
 export default function BtnWIcon(props){
     const {icon,color,title,Hcolor,style,onClick,active} = props
     const [col,setCol] = useState(color)
-    function on(){
-        if(active === undefined){setCol(Hcolor)}else{
-            if(active){setCol(Hcolor)}else{setCol(color)}
+    function on(focus){
+        if(focus){
+            setCol('white')
+        }else{
+            if(active === undefined){
+                setCol(Hcolor)   
+            }else{
+                if(active){setCol(Hcolor)}else{setCol(color)}
+            }
         }
     }
     function off(){
@@ -27,7 +33,7 @@ export default function BtnWIcon(props){
         }} 
         onMouseEnter={()=>{on()}} 
         onMouseLeave={()=>{off()}}
-        onFocus={()=>{on()}}
+        onFocus={()=>{on('white')}}
         onBlur={()=>{off()}}
         >
             {title}

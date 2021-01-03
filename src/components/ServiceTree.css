@@ -1,0 +1,9 @@
+.line {
+  border: 1px solid var(--mdGreen);
+  height: 0;
+  place-self: center;
+  width: 20px;
+}
+.sideLIne {
+  border: 0 solid var(--mdGreen);
+}
