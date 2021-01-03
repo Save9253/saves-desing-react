@@ -4,6 +4,16 @@ import * as Icons from './Icons'
 export default function BtnWIcon(props){
     const {icon,color,title,Hcolor,style,onClick,active} = props
     const [col,setCol] = useState(color)
+    function on(){
+        if(active === undefined){setCol(Hcolor)}else{
+            if(active){setCol(Hcolor)}else{setCol(color)}
+        }
+    }
+    function off(){
+        if(active === undefined){setCol(color)}else{                
+            if(active){setCol(color)}else{setCol(Hcolor)}
+        }
+    }
     return(
         <button style={{...style,color:col}} className='icon' 
         onClick={()=>{
@@ -15,16 +25,10 @@ export default function BtnWIcon(props){
             }else{console.log('OnClick is not defined')}
             
         }} 
-        onMouseEnter={()=>{
-            if(active === undefined){setCol(Hcolor)}else{
-                if(active){setCol(Hcolor)}else{setCol(color)}
-            }
-        }} 
-        onMouseLeave={()=>{
-            if(active === undefined){setCol(color)}else{
-                if(active){setCol(color)}else{setCol(Hcolor)}
-            }
-        }}
+        onMouseEnter={()=>{on()}} 
+        onMouseLeave={()=>{off()}}
+        onFocus={()=>{on()}}
+        onBlur={()=>{off()}}
         >
             {title}
             {icon === 'info' && <Icons.Info color={col}/>}
