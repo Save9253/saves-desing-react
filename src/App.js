@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import './components/App.css';
-import ServiceTree from './components/serviceTree';
+import ServiceTree from './components/serviceTree/serviceTree';
 
 // Width with no scroll bar
 function WinWidth() {
