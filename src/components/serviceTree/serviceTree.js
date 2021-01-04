@@ -1,6 +1,5 @@
 import React from 'react';
 import colors from '../colors'
-import * as Icons from '../Icons'
 import './ServiceTree.css'
 import TreeElement from './treeEl';
 import * as Ills from './Ills';
