@@ -1,27 +1,54 @@
-import React from 'react';
+import React, {useState} from 'react';
 import colors from '../colors'
 import * as Icons from '../Icons'
 
-const {mdGreen} = colors
+const {mdGreen,ltGreen} = colors
 
 export default function SideLine(props) {
-    const {title,side} = props
+    const {title,side,active} = props
+    const [col,setCol] = useState(mdGreen)
+    function on(focus){
+        if(focus){
+            setCol('white')
+        }else{
+            if(active === undefined){
+                setCol(ltGreen)   
+            }else{
+                if(active){setCol(ltGreen)}else{setCol(mdGreen)}
+            }
+        }
+    }
+    function off(){
+        if(active === undefined){setCol(mdGreen)}else{                
+            if(active){setCol(mdGreen)}else{setCol(ltGreen)}
+        }
+    }
   return (
-      <React.Fragment>
+      <button style={{
+          display:'grid',
+          gridTemplateColumns:'20px 50px 20px',
+          padding:0
+      }}
+        onMouseEnter={()=>{on()}} 
+        onMouseLeave={()=>{off()}}
+        onFocus={()=>{on('white')}}
+        onBlur={()=>{off()}}
+        className='side icon'
+      >
         {side === 'L' ? 
-        <div className='c sideLIne' style={{borderLeftWidth:2}}>
-            <div className='line'/>
+        <div className='c sideLine' style={{borderLeftWidth:2,borderColor:col}}>
+            <div className='line' style={{borderColor:col}}/>
         </div>
-        :<div className='line'/>}
+        :<div className='line' style={{borderColor:col}}/>}
         <div className='rowC' style={{transform:`rotate(${side === 'R' ? '-90' : '90'}deg)`,width:200,height:50,placeSelf:'center'}}>
-            <Icons.Add size={20} color={mdGreen}/>
-            <h2 style={{color:mdGreen}}>{title}</h2>
+            <Icons.Add size={20} color={col}/>
+            <h2 style={{color:col}}>{title}</h2>
         </div>
         {side === 'R' ? 
-        <div className='c sideLIne' style={{borderRightWidth:2}}>
-            <div className='line'/>
+        <div className='c sideLine' style={{borderRightWidth:2,borderColor:col}}>
+            <div className='line' style={{borderColor:col}}/>
         </div>
-        :<div className='line'/>}        
-      </React.Fragment>
+        :<div className='line' style={{borderColor:col}}/>}        
+      </button>
   );
 }

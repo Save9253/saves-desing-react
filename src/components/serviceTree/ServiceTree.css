@@ -1,11 +1,12 @@
 .line {
-  border: 1px solid var(--mdGreen);
+  border: 1px solid;
   height: 0;
   place-self: center;
   width: 20px;
 }
-.sideLIne {
-  border: 0 solid var(--mdGreen);
+.sideLine {
+  border: 0 solid;
+  height: 100%;
 }
 .sideEl {
   display: flex;
@@ -13,4 +14,9 @@
   justify-content: center;
   padding: 0 20px;
   gap: 20px;
+}
+.side div,
+.side h2,
+.side h3 {
+  transition: ease 500ms;
 }

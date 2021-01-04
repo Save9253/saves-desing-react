@@ -15,7 +15,7 @@ export default function ServiceTree(props) {
         display:'grid',
         placeContent:'center',
         padding:20,
-        gridTemplateColumns:'auto 20px 50px 20px auto 20px 50px 20px auto',
+        gridTemplateColumns:'auto 90px auto 90px auto',
     }}>
       <div className='sideEl'>
         <TreeElement title='Logo'
