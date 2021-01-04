@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Icons from './Icons'
 
 export default function BtnWIcon(props){
@@ -11,22 +11,23 @@ export default function BtnWIcon(props){
             if(active === undefined){
                 setCol(Hcolor)   
             }else{
-                if(active){setCol(Hcolor)}else{setCol(color)}
+                if(active){setCol(color)}else{setCol(Hcolor)}
             }
         }
     }
     function off(){
         if(active === undefined){setCol(color)}else{                
-            if(active){setCol(color)}else{setCol(Hcolor)}
+            if(active){setCol(Hcolor)}else{setCol(color)}
         }
     }
+    useEffect(()=>{off()})
     return(
         <button style={{...style,color:col}} className='icon' 
         onClick={()=>{
             if(onClick){
                 onClick();
-                if(active !== undefined){setCol(Hcolor)}else{
-                    if(active){setCol(Hcolor)}else{setCol(color)}
+                if(active !== undefined){setCol(color)}else{
+                    if(active){setCol(color)}else{setCol(Hcolor)}
                 }
             }else{console.log('OnClick is not defined')}
             
