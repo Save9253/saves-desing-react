@@ -275,7 +275,6 @@ header #logoLink {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 .unfoldInfo {
   color: var(--ltGreen);
