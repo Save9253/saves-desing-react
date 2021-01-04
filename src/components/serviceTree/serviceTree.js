@@ -9,14 +9,17 @@ import SideDes from './sideDes'
 const {mdGray} = colors
 
 export default function ServiceTree(props) {
+  const [justify,setJustify]=useState('center')
   const [selL,setSelL] = useState(null)
   const [selR,setSelR] = useState(null)
   return (
-    <div style={{
+    <div id='serviceTree'
+    style={{
         backgroundColor:mdGray,
         width:props.vw,
         display:'grid',
-        placeContent:'center',
+        alignContent:'center',
+        justifyContent:justify,
         padding:20,
         gridTemplateColumns:'250px 200px 90px 275px 90px 200px 250px',
     }}>
@@ -47,13 +50,13 @@ export default function ServiceTree(props) {
         des="If you are having a hard time finding illustrations that match your style and communicate the right message, then I could just make a custom illustration for your specific need."
         />
       </div>
-      <SideLine side="L" title="Add Graphics"/>
+      <SideLine side="L" title="Add Graphics" justify={justify} setJustify={setJustify}/>
       <TreeElement title='Add Home Page'
       titleLevel='h2'
       ill={Ills.Home(props={height:"200"})}
       des='The home page includes a basic setup for your website, three sections with information, and a navigation bar.'
       />
-      <SideLine side="R" title="Add Elements"/>
+      <SideLine side="R" title="Add Elements" justify={justify} setJustify={setJustify}/>
       <div className='sideEl'>
         <TreeElement title='Shop'
         ill={Ills.Cart(props={height:100})}

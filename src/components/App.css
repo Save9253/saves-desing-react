@@ -115,7 +115,7 @@ body {
   left: -250px;
 }
 #root {
-  min-height: calc(100vh - 70px);
+  min-height: calc(90vh - 70px);
   width: 100%;
   display: grid;
   place-content: center;

@@ -1,3 +1,7 @@
+#serviceTree {
+  overflow: hidden;
+  transition: ease 500ms;
+}
 .line {
   border: 1px solid;
   height: 0;
