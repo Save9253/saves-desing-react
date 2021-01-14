@@ -8,7 +8,7 @@ function WinWidth() {
 
   useEffect(() => {
     function handleResize() {
-      setVW(document.documentElement.clientWidth + "px");
+      setVW(document.documentElement.clientWidth);
     }
 
     window.addEventListener("resize", ()=>{
@@ -25,7 +25,7 @@ function WinWidth() {
 
 function App() {
   const size = WinWidth();
-  if(size !== undefined){document.documentElement.style.setProperty('--vw',size)}
+  if(size !== undefined){document.documentElement.style.setProperty('--vw',size+'px')}
   return (
     <ServiceTree vw={size}/>
   );

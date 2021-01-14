@@ -5,7 +5,7 @@ import * as Icons from '../Icons'
 const {mdGreen,ltGreen} = colors
 
 export default function SideLine(props) {
-    const {title,side,active,justify,setJustify} = props
+    const {title,side,active,ML,setML,MR,setMR,vw} = props
     const [col,setCol] = useState(mdGreen)
     function on(focus){
         if(focus){
@@ -35,11 +35,13 @@ export default function SideLine(props) {
         onBlur={()=>{off()}}
         className='side icon'
         onClick={()=>{
-            if(side==='L'){
-                if(justify==='center'){setJustify('start')}else{setJustify('center')}
-            }
-            if(side==='R'){
-                if(justify==='center'){setJustify('end')}else{setJustify('center')}
+            if(vw<855){
+                if(side==='L'){
+                    if(MR !== -500){setMR(-500)}else{setMR(0)}
+                }
+                if(side==='R'){
+                    if(ML !== -500){setML(-500)}else{setML(0)}
+                }
             }
         }}
       >
