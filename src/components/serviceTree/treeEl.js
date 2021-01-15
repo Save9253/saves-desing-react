@@ -13,9 +13,9 @@ export default function TreeElement(props) {
     return (
         <button className='c icon'
         onMouseEnter={()=>{setColor('white')}}
-        onMouseLeave={()=>{setColor(props.col)}}
+        onMouseLeave={()=>{setColor(col)}}
         onFocus={()=>{setColor('white')}}
-        onBlur={()=>{setColor(props.col)}}
+        onBlur={()=>{setColor(col)}}
         onClick={()=>{
             if(setSel !== undefined){
                 if(sel === des){setSel(null)}else{setSel(des)}
