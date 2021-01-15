@@ -4,20 +4,18 @@ import * as Icons from '../Icons'
 import * as Ills from './Ills';
 import './ServiceTree.css'
 
-const {ltGreen,mdGreen} = colors
+const {ltGreen} = colors
 
 export default function TreeElement(props) {
-    const {ill,des,title,titleLevel,sel,setSel} = props
-    let stat = false;
-    if(setSel !== undefined && sel === des){stat = true}
-    const [act,setAct] = useState(stat)
-    const [color,setColor]=useState(mdGreen)
+    const {ill,des,title,titleLevel,col,sel,setSel} = props
+    const [act,setAct] = useState(false)
+    const [color,setColor]=useState(col)
     return (
         <button className='c icon'
         onMouseEnter={()=>{setColor('white')}}
-        onMouseLeave={()=>{if(act){setColor(ltGreen)}else{setColor(mdGreen)}}}
+        onMouseLeave={()=>{setColor(props.col)}}
         onFocus={()=>{setColor('white')}}
-        onBlur={()=>{if(act){setColor(ltGreen)}else{setColor(mdGreen)}}}
+        onBlur={()=>{setColor(props.col)}}
         onClick={()=>{
             if(setSel !== undefined){
                 if(sel === des){setSel(null)}else{setSel(des)}
