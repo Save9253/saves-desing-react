@@ -10,6 +10,7 @@ export function Logo(props){
             <path d="M41 16L2 129L50 180L151 118L136 45L64 103L97 2L41 16Z" fill={ltGreen}/>
             <path d="M97 2L41 16L2 129L11 146L62 200L163 139L145 62L136 45L84 87L106 18L97 2Z" stroke={black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
+        
     )
 }
 export function Cart(props){
