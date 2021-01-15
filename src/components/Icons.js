@@ -26,26 +26,29 @@ export function Add2Cart(props){
                 <path d="M30 55L25 70H70"/>
                 <circle cx="25" cy="75" r="5"/>
                 <circle cx="70" cy="75" r="5"/>
+                <path d="M37 25H67"/>
+                <path d="M51 11V41"/>
             </g>
-            <text x="33" y="50" style={{fontSize:70}} fill={color}>+</text>
         </svg>
     )
 }
 export function Info(props){
     const {color,size} = props
     return(
-    <svg style={{margin:5}} width={size ? size : "28"} viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M72 14L84 43L72 72L43 84L14 72L2 43L14 14L43 2L72 14Z" stroke={color} strokeWidth="4" strokeLinejoin="round"/>
-        <text x="35" y="66" style={{fontSize:60}} fill={color}>i</text>
+    <svg style={{margin:5}} width={size ? size : "30"} viewBox="0 0 100 100" strokeLinecap="round" stroke={color} fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" strokeWidth="5"/>
+        <circle cx="50" cy="25" r="5" fill={color}/>
+        <path d="M50 45V75" strokeWidth="10"/>
     </svg>
     )
 }
 export function Add(props){
     const {color,size} = props
     return(
-    <svg style={{margin:5}} width={size ? size : "28"} viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M72 14L84 43L72 72L43 84L14 72L2 43L14 14L43 2L72 14Z" stroke={color} strokeWidth="4" strokeLinejoin="round"/>
-        <text x="22" y="69" style={{fontSize:78}} fill={color}>+</text>
+    <svg style={{margin:5}} width={size ? size : "30"} viewBox="0 0 100 100" strokeLinecap="round" stroke={color} fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" strokeWidth="5"/>
+        <path d="M30 50H70" strokeWidth="10"/>
+        <path d="M50 30V70" strokeWidth="10"/>
     </svg>
     )
 }
