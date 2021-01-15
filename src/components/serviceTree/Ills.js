@@ -4,25 +4,27 @@ import colors from '../colors.js'
 const {black,mdGreen,ltGreen} = colors 
 
 export function Logo(props){
+    const {focus,height} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 165 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M97 2L2 129L11 146L62 200L163 139L145 62L136 45L74 120L106 18L97 2Z" fill={mdGreen} stroke={black} strokeWidth="1"/>
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 165 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M97 2L2 129L11 146L62 200L163 139L145 62L136 45L74 120L106 18L97 2Z" fill={mdGreen}/>
             <path d="M41 16L2 129L50 180L151 118L136 45L64 103L97 2L41 16Z" fill={ltGreen}/>
-            <path d="M97 2L41 16L2 129L11 146L62 200L163 139L145 62L136 45L84 87L106 18L97 2Z" stroke={black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M97 2L41 16L2 129L11 146L62 200L163 139L145 62L136 45L84 87L106 18L97 2Z" stroke={focus?'white':black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
         
     )
 }
 export function Cart(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 184 171" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M115 104L125 135" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" stroke={black}/>
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 184 171" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M115 104L125 135" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" stroke={focus?'white':black}/>
             <g fill={ltGreen}>
                 <path d="M131 116H39L19 55L152 55L131 116Z"/>
                 <path d="M2 43L19 55H152L135 43L2 43Z"/>
             </g>
             <path d="M2 43L23 104L39 116L19 55L152 55L148 53L134 52L135 43L133 43L132 52L15 52L2 43Z" fill={mdGreen}/>
-            <g strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" stroke={black}>
+            <g strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" stroke={focus?'white':black}>
                 <path d="M135 43L145 12L166 2L182 14L162 24L152 55" />
                 <path d="M134 76H36" stroke={mdGreen}/>
                 <path d="M127 96H43" stroke={mdGreen}/>
@@ -42,9 +44,10 @@ export function Cart(props){
     )
 }
 export function Home(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 204 154" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g fill={ltGreen} stroke={black} strokeWidth="3" strokeLinejoin="round">
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 204 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g fill={ltGreen} stroke={focus?'white':black} strokeWidth="3" strokeLinejoin="round">
                 <path d="M202 2H2V32H202V2Z" />
                 <path d="M202 32H2V152H202V32Z"/>
             </g>
@@ -62,8 +65,9 @@ export function Home(props){
     )
 }
 export function Blog(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 163 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 163 179" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g fill={ltGreen}>
                 <path d="M17 17L107 2L118 7L122 22V125L47 137L58 142L62 157L58 172L47 177L36 172L32 157V37L28 22L17 17Z"/>
                 <path d="M47 137L137 122L148 127L152 142L148 157L137 162L47 177L58 172L62 157L58 142L47 137Z"/>
@@ -86,23 +90,25 @@ export function Blog(props){
                 <path d="M44 107L74 102L71 107L44 111V107Z"/>
             </g>
             <path d="M65 118L75 103L90 85L116 57L143 35L118 58L92 86L77 104L71 113L65 118Z" fill={black}/>
-            <path d="M107 2L17 17L6 22L2 37L6 52L17 57L32 55V157L36 172L47 177L137 162L148 157L152 142L148 127L137 122L122 125V82L128 79L122 76V75L130 76L145 62L140 58L149 59L161 37L161 17L142 21L131 27L125 40L125 29L122 32V22L118 7L107 2Z" stroke={black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M107 2L17 17L6 22L2 37L6 52L17 57L32 55V157L36 172L47 177L137 162L148 157L152 142L148 127L137 122L122 125V82L128 79L122 76V75L130 76L145 62L140 58L149 59L161 37L161 17L142 21L131 27L125 40L125 29L122 32V22L118 7L107 2Z" stroke={focus?'white':black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
     )
 }
 export function Icon(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 194 194" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 194 194" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M165 165L100 192L35 165L29 159L159 29L165 35L192 100L165 165Z" fill={mdGreen} />
             <path d="M157 157L92 184L29 159L2 94L29 29L94 2L159 29L184 92L157 157Z" fill={ltGreen}/>
             <path d="M119 156H68L80 141V92L68 74H120L110 95V139L119 156ZM110 60L94 65L80 60L75 45L80 30L96 25L110 30L114 45L110 60Z" fill={black}/>
-            <path d="M94 2L29 29L2 94L29 159L35 165L100 192L165 165L192 100L165 35L159 29L94 2Z" stroke={black} strokeWidth="3" strokeLinejoin="round"/>
+            <path d="M94 2L29 29L2 94L29 159L35 165L100 192L165 165L192 100L165 35L159 29L94 2Z" stroke={focus?'white':black} strokeWidth="3" strokeLinejoin="round"/>
         </svg>
     )
 }
 export function Domain(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 224 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 224 113" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 101L212 2L222 12V111H12L2 101Z" fill={mdGreen}/>
             <path d="M212 2H2V101H212V2Z" fill={ltGreen}/>
             <g fill={black}>
@@ -111,14 +117,15 @@ export function Domain(props){
                 <path d="M98 25L106 27L112 30L116 36L117 44V57L116 65L112 71L106 74L98 76H94L86 74L81 71L77 65L76 57V44L77 36L81 30L86 27L94 25H98ZM94 37L89 39L87 44V57L89 62L94 64H98L103 62L106 57V44L103 39L98 37H94Z"/>
                 <path d="M171 37L167 37L165 39L164 42L163 45V76H152V45L152 42L150 39L148 37L144 37H141L137 37L135 39L133 42L133 45V76H121V25H133V27L141 25H146L153 26L158 30L163 26L171 25H176L183 27L189 31L192 36L194 43V76H182V45L182 42L181 39L178 37L174 37H171Z"/>
             </g>
-            <path d="M2 2V101L12 111H222V12L212 2H2Z" stroke={black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M2 2V101L12 111H222V12L212 2H2Z" stroke={focus?'white':black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
     )
 }
 export function Ills(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 199 149" fill="none" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M197 2H2V147H197V2Z" fill={ltGreen} stroke={black} strokeWidth="3"/>
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 199 149" fill="none" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M197 2H2V147H197V2Z" fill={ltGreen} stroke={focus?'white':black} strokeWidth="3"/>
             <path d="M22 131H185L170 99L159 83L147 78L137 77L131 81L124 80L119 85L123 99L89 49L79 46L72 52L66 47L55 49L35 81L22 131Z" fill={black}/>
             <g fill={mdGreen}>
                 <path d="M72 52L79 46L89 49L123 99L89 72L72 52Z" />
@@ -134,9 +141,10 @@ export function Ills(props){
     )
 }
 export function Sec(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 205 104" fill={mdGreen} xmlns="http://www.w3.org/2000/svg">
-            <path d="M202.9 15.5H2.4V88.2H202.9V15.5Z" fill={ltGreen} stroke={black} strokeWidth="3" strokeLinejoin="round"/>
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 205 104" fill={mdGreen} xmlns="http://www.w3.org/2000/svg">
+            <path d="M202.9 15.5H2.4V88.2H202.9V15.5Z" fill={ltGreen} stroke={focus?'white':black} strokeWidth="3" strokeLinejoin="round"/>
             <path d="M118.8 7.9L115.7 9.2L112.6 7.9L111.3 4.8L112.6 1.7L115.7 0.4L118.8 1.7L120.1 4.8L118.8 7.9Z"/>
             <path d="M105.8 7.9L102.7 9.2L99.5 7.9L98.2 4.8L99.5 1.7L102.7 0.4L105.8 1.7L107.1 4.8L105.8 7.9Z"/>
             <path d="M92.7 7.9L89.6 9.2L86.5 7.9L85.2 4.8L86.5 1.7L89.6 0.4L92.7 1.7L94 4.8L92.7 7.9Z"/>
@@ -153,8 +161,9 @@ export function Sec(props){
     )
 }
 export function Style(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 225 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 225 136" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M199 24L104 11L79 21L67 36L70 55L57 64L33 68L35 119L39 123L84 134L157 129L215 96L223 59L202 28L199 24ZM123 28L132 37L126 48L106 54L91 54L82 46L89 34L105 28L123 28Z" fill={mdGreen}/>
             <path d="M100 7L75 16L63 32L67 51L64 52L8 38L3 39L6 43L54 59L53 60L29 64L17 87L35 119L80 130L151 123L212 90L219 58L199 24L155 8L100 7ZM119 24L128 33L123 43L103 50L87 50L79 41L86 30L101 24L119 24Z" fill={ltGreen}/>
             <g id='blob'>
@@ -173,14 +182,15 @@ export function Style(props){
                 <path d="M28 66L27 68L84 75L110 77L116 77L121 79L139 79L144 78L138 77L126 74L116 74L111 74L87 71L28 66Z"/>
             </g>
             <path d="M60 62L84 70L110 74L116 75L121 78L139 79L144 76L139 78L121 78L116 74L82 69L60 62Z" fill={black}/>
-            <path d="M100 7L75 16L63 32L67 51L64 52L8 38L3 39L6 43L54 59L53 60L29 64L17 87L35 119L39 123L84 134L157 129L215 96L223 59L202 28L199 24L155 8L100 7ZM123 28L128 33L123 43L103 50L87 50L83 45L89 34L105 28L123 28Z" stroke={black} strokeWidth="3"/>
+            <path d="M100 7L75 16L63 32L67 51L64 52L8 38L3 39L6 43L54 59L53 60L29 64L17 87L35 119L39 123L84 134L157 129L215 96L223 59L202 28L199 24L155 8L100 7ZM123 28L128 33L123 43L103 50L87 50L83 45L89 34L105 28L123 28Z" stroke={focus?'white':black} strokeWidth="3"/>
         </svg>
     )
 }
 export function Form(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} role="img" height={props.height} viewBox="0 0 212 186" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M209.3 2.5H2.2V183.5H209.3V2.5Z" fill={ltGreen} stroke={black} strokeWidth="3.6" strokeLinejoin="round"/>
+        <svg style={{placeSelf: 'center'}} role="img" height={height} viewBox="0 0 212 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M209.3 2.5H2.2V183.5H209.3V2.5Z" fill={ltGreen} stroke={focus?'white':black} strokeWidth="3.6" strokeLinejoin="round"/>
             <g fill={mdGreen}>
                 <path d="M148.3 39.2H63.6V49.2H148.3V39.2Z"/>
                 <path d="M135.2 69.2H63.5V79.2H135.2V69.2Z"/>
@@ -208,24 +218,26 @@ export function Form(props){
     )
 }
 export function Hosting(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} height={props.height} role="img" viewBox="0 0 249 141" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M120 2L92 8L69 24L55 49L48 48L27 52L10 68L2 94L9 118L26 134L48 139H192L221 132L240 111L247 84L241 58L220 36L192 30L176 32L161 16L142 6L120 2Z" fill={ltGreen} stroke={black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg style={{placeSelf: 'center'}} height={height} role="img" viewBox="0 0 249 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M120 2L92 8L69 24L55 49L48 48L27 52L10 68L2 94L9 118L26 134L48 139H192L221 132L240 111L247 84L241 58L220 36L192 30L176 32L161 16L142 6L120 2Z" fill={ltGreen} stroke={focus?'white':black} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M125 26L75 64V70H86V120H163V70H174V64L125 26ZM111 70H122V81H111V70ZM127 70H138V81H127V70ZM111 87H122V98H111V87ZM127 87H138V98H127V87Z" fill={black}/>
         </svg>
     )
 }
 export function Auth(props){
+    const {height,focus} = props
     return(
-        <svg style={{placeSelf: 'center'}} height={props.height} role="img" viewBox="0 0 123 202" fill="none" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <svg style={{placeSelf: 'center'}} height={height} role="img" viewBox="0 0 123 202" fill="none" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 84V51L33 19L65 6L92 15L95 17L107 49V73L103 76L95 76L91 73V49L86 29L61 19L41 28L33 48V84L20 84Z" fill={black}/>
             <path d="M16 82V47L29 15L61 2L92 15L104 46L103 70H95L91 73L91 49L82 26L61 17L39 26L31 47V76L16 82Z" fill={mdGreen}/>
-            <path d="M61 2L29 15L16 47V84C23 84 21 84 33 84V48L41 28L61 19L83 28L91 49V73L95 76L103 76L107 73V49L95 17L92 15L61 2Z" stroke={black} strokeWidth="3"/>
+            <path d="M61 2L29 15L16 47V84C23 84 21 84 33 84V48L41 28L61 19L83 28L91 49V73L95 76L103 76L107 73V49L95 17L92 15L61 2Z" stroke={focus?'white':black} strokeWidth="3"/>
             <path d="M31 18L20 46L34 19L61 9L77 12L61 5L31 18Z" fill={ltGreen}/>
             <path d="M2 194L115 82L121 88V200H8L2 194Z" fill={mdGreen}/>
             <path d="M2 82H115L113 192L2 194V82Z" fill={ltGreen}/>
             <path d="M59 102L44 108L39 122L44 136L52 139L43 174H74L65 139L72 136L78 122L73 108L59 102Z" fill={black}/>
-            <path d="M2 82V194L8 200H121V88L115 82H2Z" stroke={black} strokeWidth="3" />
+            <path d="M2 82V194L8 200H121V88L115 82H2Z" stroke={focus?'white':black} strokeWidth="3" />
         </svg>
     )
 }
