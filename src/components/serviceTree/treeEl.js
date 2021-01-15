@@ -30,7 +30,7 @@ export default function TreeElement(props) {
                         if(act){setAct(false)}else{setAct(true)}
                     }
                 }}/>
-                <BtnWIcon  style={{height:45,padding:0}} color={mdGreen} Hcolor={ltGreen} icon="add2cart" onClick={()=>{console.log(setSel !== undefined && sel === des);console.log('act '+act)}}/>
+                <BtnWIcon style={{height:45,padding:0}} color={mdGreen} Hcolor={ltGreen} icon="add2cart"/>
             </div>
             {titleLevel === 'h2' && <p className='unfoldInfo' style={{maxWidth:275,height:act?'100%':0,opacity:act?1:0}}>{des}</p>}
         </section>

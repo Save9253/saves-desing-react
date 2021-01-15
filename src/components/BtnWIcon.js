@@ -1,26 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import * as Icons from './Icons'
 
 export default function BtnWIcon(props){
     const {icon,color,title,Hcolor,style,onClick,active} = props
     const [col,setCol] = useState(color)
-    function on(focus){
-        if(focus){
-            setCol('white')
-        }else{
-            if(active === undefined){
-                setCol(Hcolor)   
-            }else{
-                if(active){setCol(color)}else{setCol(Hcolor)}
-            }
-        }
+    function on(){
+        setCol('white')
     }
     function off(){
         if(active === undefined){setCol(color)}else{                
-            if(active){setCol(Hcolor)}else{setCol(color)}
+            if(active){setCol(Hcolor)}else{setCol(color);}
         }
     }
-    useEffect(()=>{off()})
     return(
         <button style={{...style,color:col}} className='icon' 
         onClick={()=>{
@@ -34,7 +25,7 @@ export default function BtnWIcon(props){
         }} 
         onMouseEnter={()=>{on()}} 
         onMouseLeave={()=>{off()}}
-        onFocus={()=>{on('white')}}
+        onFocus={()=>{on()}}
         onBlur={()=>{off()}}
         >
             {title}
