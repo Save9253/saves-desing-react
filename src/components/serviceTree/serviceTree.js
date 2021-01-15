@@ -21,7 +21,6 @@ export default function ServiceTree(props) {
   const {vw} = props
   const [ML,setML]=useState(0)
   const [MR,setMR]=useState(0)
-  const [sel,setSel]=useState(null)
   const [selL,setSelL] = useState(null)
   const [selR,setSelR] = useState(null)
   return (
