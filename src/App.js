@@ -3,6 +3,7 @@ import './components/App.css';
 import Face from './components/face' 
 import BigSocLink from './components/BigSocLink'
 import Projects from './components/Projects'
+import {colors} from './components/styles'
 
 export default function App() {
   const [VW, setVW] = useState(undefined)
@@ -23,9 +24,11 @@ export default function App() {
   if(VW){document.documentElement.style.setProperty('--vw',VW+'px')}
   return (
     <div style={{width:VW}}>
-      <Face/>
-      <BigSocLink type='In' title="Connect with Saveliy on" link="https://www.linkedin.com/in/saveliy-saunin/"/>
-      <BigSocLink type='Be' title="Check Saveliy's projects on" link="https://www.behance.net/saveliy_saunin"/>
+      <div style={{backgroundColor:colors.ltGreen,padding:"30px 0"}}>
+        <Face/>
+        <BigSocLink type='In' title="Connect with Saveliy on" link="https://www.linkedin.com/in/saveliy-saunin/"/>
+        <BigSocLink type='Be' title="Check Saveliy's projects on" link="https://www.behance.net/saveliy_saunin"/>
+      </div>
       <Projects/>
     </div>
   );

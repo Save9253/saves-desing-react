@@ -79,7 +79,7 @@ hr {
   margin: -40px 0 0;
   font-size: 24px;
   font-weight: 600;
-  background-color: var(--ltGreen);
+  background-color: var(--mdGray);
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
@@ -98,10 +98,20 @@ hr {
   margin-left: 20px;
   margin-right: 20px;
 }
+ul{
+  padding-inline-start: 20px;
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+}
+li{
+  line-height: 1.2;
+  margin-block-end: 10px;
+}
+
 
 /* Main */
 body {
-  background-color: var(--ltGreen);
+  background-color: var(--mdGray);
   width: var(--vw);
   margin: 0;
   position: absolute;
@@ -112,11 +122,9 @@ body {
   left: -250px;
 }
 #root {
-  min-height: calc(90vh - 70px);
   width: 100%;
   display: grid;
   place-content: center;
-  margin-top: 70px;
 }
 /* Hidden Class */
 .hid {

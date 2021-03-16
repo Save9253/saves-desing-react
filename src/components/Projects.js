@@ -12,7 +12,7 @@ export default function Projects() {
             marginTop:20
         }}>
             <h2 style={{color:colors.org,textAlign:'center'}}>Projects</h2>
-            <div>
+            <div style={{display:'flex',flexWrap:'wrap',justifyContent:"center"}}>
                 <Project
                 title='PartyLive'
                 bullets={[

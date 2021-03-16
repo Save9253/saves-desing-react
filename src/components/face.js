@@ -2,71 +2,71 @@ import React, {useState,useEffect} from 'react';
 import {colors} from './styles'
 
 export default function Face() {   
-    function expr(expression){
-        setLeyeSh(expression.LeyeSh)
-        setNose(expression.nose)
-        setTLip(expression.TLip)
-        setRnosed(expression.Rnosed)
-        setBLip(expression.BLip)
-        setReye(expression.Reye)
-        setLeye(expression.Leye)
-        setMustch(expression.mustch)
-        setReyeB(expression.ReyeB)
-        setLeyeB(expression.LeyeB)
-    }   
-    
-    const [LeyeSh,setLeyeSh] = useState(normEx.LeyeSh)
-    const [nose,setNose] = useState(normEx.nose)
-    const [TLip,setTLip] = useState(normEx.TLip) 
-    const [BLip,setBLip] = useState(normEx.BLip) 
-    const [Rnosed,setRnosed] = useState(normEx.Rnosed) 
-    const [Reye,setReye] = useState(normEx.Reye) 
-    const [Leye,setLeye] = useState(normEx.Leye)
-    const [mustch,setMustch] = useState(normEx.mustch)
-    const [ReyeB,setReyeB] = useState(normEx.ReyeB)
-    const [LeyeB,setLeyeB] = useState(normEx.LeyeB)
-    const [ReyeOp,setReyeOp] = useState(true);
+  function expr(expression){
+      setLeyeSh(expression.LeyeSh)
+      setNose(expression.nose)
+      setTLip(expression.TLip)
+      setRnosed(expression.Rnosed)
+      setBLip(expression.BLip)
+      setReye(expression.Reye)
+      setLeye(expression.Leye)
+      setMustch(expression.mustch)
+      setReyeB(expression.ReyeB)
+      setLeyeB(expression.LeyeB)
+  }   
+  
+  const [LeyeSh,setLeyeSh] = useState(normEx.LeyeSh)
+  const [nose,setNose] = useState(normEx.nose)
+  const [TLip,setTLip] = useState(normEx.TLip) 
+  const [BLip,setBLip] = useState(normEx.BLip) 
+  const [Rnosed,setRnosed] = useState(normEx.Rnosed) 
+  const [Reye,setReye] = useState(normEx.Reye) 
+  const [Leye,setLeye] = useState(normEx.Leye)
+  const [mustch,setMustch] = useState(normEx.mustch)
+  const [ReyeB,setReyeB] = useState(normEx.ReyeB)
+  const [LeyeB,setLeyeB] = useState(normEx.LeyeB)
+  const [ReyeOp,setReyeOp] = useState(true);
 
-    useEffect(()=>{
-      let oneBlinkTimeOut;
-      function blink() {
-          if(ReyeOp){
-              setReye(blinkClosed.Reye)
-              setLeye(blinkClosed.Leye)
-              oneBlinkTimeOut = setTimeout(()=>{
-                setReye(blinkOpen.Reye)
-                setLeye(blinkOpen.Leye)
-              },300);
-          }
-      }
-      let check = true
-      let refreshLimit
-      function moveEyes (event) {
-        if(check === true && ReyeOp === true){
-          check = false
-          const mouseX = event.pageX
-          const mouseY = event.pageY
-          const leftEyeC = findCenter(document.getElementById('Leye').getBoundingClientRect())
-          const rightEyeC = findCenter(document.getElementById('Reye').getBoundingClientRect())
-          const moveRightEye = Pos2Pers(rightEyeC,mouseX,mouseY)
-          const moveLeftEye = Pos2Pers(leftEyeC,mouseX,mouseY)
-          setLeye(leftEyeMove(moveLeftEye))
-          setReye(rightEyeMove(moveRightEye))
-          refreshLimit = setTimeout(()=>{check = true},200)
+  useEffect(()=>{
+    let oneBlinkTimeOut;
+    function blink() {
+        if(ReyeOp){
+            setReye(blinkClosed.Reye)
+            setLeye(blinkClosed.Leye)
+            oneBlinkTimeOut = setTimeout(()=>{
+              setReye(blinkOpen.Reye)
+              setLeye(blinkOpen.Leye)
+            },300);
         }
+    }
+    let check = true
+    let refreshLimit
+    function moveEyes (event) {
+      if(check === true && ReyeOp === true){
+        check = false
+        const mouseX = event.pageX
+        const mouseY = event.pageY
+        const leftEyeC = findCenter(document.getElementById('Leye').getBoundingClientRect())
+        const rightEyeC = findCenter(document.getElementById('Reye').getBoundingClientRect())
+        const moveRightEye = Pos2Pers(rightEyeC,mouseX,mouseY)
+        const moveLeftEye = Pos2Pers(leftEyeC,mouseX,mouseY)
+        setLeye(leftEyeMove(moveLeftEye))
+        setReye(rightEyeMove(moveRightEye))
+        refreshLimit = setTimeout(()=>{check = true},200)
       }
-      window.addEventListener('mousemove',(event)=>{moveEyes(event)})
-      let blinkInterval = setInterval(() => {blink()}, 4000);
-      return()=>{
-        clearInterval(blinkInterval)
-        clearTimeout(oneBlinkTimeOut)
-        clearTimeout(refreshLimit)
-        window.removeEventListener('mousemove', moveEyes)
-      }
-    },[ReyeOp])
+    }
+    window.addEventListener('mousemove',(event)=>{moveEyes(event)})
+    let blinkInterval = setInterval(() => {blink()}, 4000);
+    return()=>{
+      clearInterval(blinkInterval)
+      clearTimeout(oneBlinkTimeOut)
+      clearTimeout(refreshLimit)
+      window.removeEventListener('mousemove', moveEyes)
+    }
+  },[ReyeOp])
 
-    return(
-      <div style={{display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'center'}}>   
+  return(
+    <div style={{display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'center'}}>   
         <svg id="face" style={{height:200,margin:"0 30px 20px"}} role="img" aria-label="Save" viewBox="0 0 149 203" fill="none" xmlns="http://www.w3.org/2000/svg"
         onMouseEnter={()=>{expr(noEx)}}
         onMouseLeave={()=>{expr(normEx)}}
