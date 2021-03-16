@@ -19,11 +19,11 @@ export default function Face(props) {
     let oneBlinkTimeOut;
     function blink() {
         if(ReyeOp){
-            Reye(blinkClosed.Reye)
-            Leye(blinkClosed.Leye)
+            setReye(blinkClosed.Reye)
+            setLeye(blinkClosed.Leye)
             oneBlinkTimeOut = setTimeout(()=>{
-                Reye(blinkOpen.Reye)
-                Leye(blinkOpen.Leye)
+              setReye(blinkOpen.Reye)
+              setLeye(blinkOpen.Leye)
             },300);
         }
     }
@@ -40,31 +40,33 @@ export default function Face(props) {
     const [mustch,setMustch] = useState(normEx.mustch)
     const [ReyeB,setReyeB] = useState(normEx.ReyeB)
     const [LeyeB,setLeyeB] = useState(normEx.LeyeB)
-    /* const [face,setFace] = useState(normEx.face) */
-    
-    let check = true
-    window.addEventListener('mousemove',(event)=>{
-        if(check === true && ReyeOp === true){
-            check = false
-            const mouseX = event.pageX
-            const mouseY = event.pageY
-            const leftEyeC = findCenter(Leye.getBoundingClientRect())
-            const rightEyeC = findCenter(Reye.getBoundingClientRect())
-            const moveRightEye = Pos2Pers(rightEyeC,mouseX,mouseY)
-            const moveLeftEye = Pos2Pers(leftEyeC,mouseX,mouseY)
-            setLeye(leftEyeMove(moveLeftEye))
-            setReye(rightEyeMove(moveRightEye))
-            setTimeout(()=>{check = true},200)
-        }
-    })
+
     useEffect(()=>{
-        let blinkInterval = setInterval(() => {blink()}, 4000);
-        return(()=>{
-            clearInterval(blinkInterval);
-            clearTimeout(oneBlinkTimeOut)
-        })
+      let check = true
+      let refreshLimit
+      function moveEyes (event) {
+        if(check === true && ReyeOp === true){
+          check = false
+          const mouseX = event.pageX
+          const mouseY = event.pageY
+          const leftEyeC = findCenter(document.getElementById('Leye').getBoundingClientRect())
+          const rightEyeC = findCenter(document.getElementById('Reye').getBoundingClientRect())
+          const moveRightEye = Pos2Pers(rightEyeC,mouseX,mouseY)
+          const moveLeftEye = Pos2Pers(leftEyeC,mouseX,mouseY)
+          setLeye(leftEyeMove(moveLeftEye))
+          setReye(rightEyeMove(moveRightEye))
+          refreshLimit = setTimeout(()=>{check = true},200)
+        }
+      }
+      window.addEventListener('mousemove',(event)=>{moveEyes(event)})
+      let blinkInterval = setInterval(() => {blink()}, 4000);
+      return(()=>{
+          clearInterval(blinkInterval)
+          clearTimeout(oneBlinkTimeOut)
+          clearTimeout(refreshLimit)
+          window.removeEventListener('mousemove', moveEyes)
+      })
     })
-    
 
     return(
     <svg id="face" style={{height:200,margin:"0 30px 20px"}} role="img" aria-label="Save" viewBox="0 0 149 203" fill="none" xmlns="http://www.w3.org/2000/svg"

@@ -57,7 +57,7 @@ h3 {
 }
 
 /* Elements */
-svg > * {
+svg path {
   transition: ease 500ms;
   transform-origin: center;
 }
