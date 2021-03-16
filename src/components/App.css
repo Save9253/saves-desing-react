@@ -69,10 +69,6 @@ a {
   transition: ease 500ms;
   display: flex;
 }
-ul {
-  padding-inline-start: unset;
-  list-style-type: none;
-}
 hr {
   border: none;
   border-bottom: solid 2px var(--black);

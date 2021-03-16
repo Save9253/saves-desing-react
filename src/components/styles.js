@@ -6,22 +6,8 @@ const colors = {
     cardinal:'c5283d',
     red:'#B23A48',
     white50:'rgba(255,255,255,0.5)',
-    white:'#F7F7FF'
+    white:'#F7F7FF',
+    org:'#F79256'
 }
 
-const styles = {
-    linkDiv:{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 5,
-        flexWrap: 'wrap'
-    },
-    link:{
-        padding: '8px 10px',
-        borderRadius: '2px',
-        fontSize: '20px',
-        fontFamily: '"Do Hyeon", sans-serif'
-    }
-}
-export {colors,styles}
+export {colors}
