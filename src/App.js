@@ -22,7 +22,7 @@ function App() {
   if(VW){document.documentElement.style.setProperty('--vw',VW+'px')}
   return (
     <React.Fragment>
-      <h1>Meet Save!</h1>
+      <h1>Saveliy Saunin!</h1>
       <hr/>
       <div style={{display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'center'}}>
         <Face/>

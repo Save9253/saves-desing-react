@@ -15,20 +15,7 @@ export default function Face(props) {
         setMustch(expression.mustch)
         setReyeB(expression.ReyeB)
         setLeyeB(expression.LeyeB)
-    }
-    let oneBlinkTimeOut;
-    function blink() {
-        if(ReyeOp){
-            setReye(blinkClosed.Reye)
-            setLeye(blinkClosed.Leye)
-            oneBlinkTimeOut = setTimeout(()=>{
-              setReye(blinkOpen.Reye)
-              setLeye(blinkOpen.Leye)
-            },300);
-        }
-    }
-    
-    const [ReyeOp,setReyeOp] = useState(true);
+    }   
     
     const [LeyeSh,setLeyeSh] = useState(normEx.LeyeSh)
     const [nose,setNose] = useState(normEx.nose)
@@ -40,8 +27,20 @@ export default function Face(props) {
     const [mustch,setMustch] = useState(normEx.mustch)
     const [ReyeB,setReyeB] = useState(normEx.ReyeB)
     const [LeyeB,setLeyeB] = useState(normEx.LeyeB)
+    const [ReyeOp,setReyeOp] = useState(true);
 
     useEffect(()=>{
+      let oneBlinkTimeOut;
+      function blink() {
+          if(ReyeOp){
+              setReye(blinkClosed.Reye)
+              setLeye(blinkClosed.Leye)
+              oneBlinkTimeOut = setTimeout(()=>{
+                setReye(blinkOpen.Reye)
+                setLeye(blinkOpen.Leye)
+              },300);
+          }
+      }
       let check = true
       let refreshLimit
       function moveEyes (event) {
@@ -60,13 +59,14 @@ export default function Face(props) {
       }
       window.addEventListener('mousemove',(event)=>{moveEyes(event)})
       let blinkInterval = setInterval(() => {blink()}, 4000);
-      return(()=>{
-          clearInterval(blinkInterval)
-          clearTimeout(oneBlinkTimeOut)
-          clearTimeout(refreshLimit)
-          window.removeEventListener('mousemove', moveEyes)
-      })
-    })
+      return()=>{
+        console.log('clean')
+        clearInterval(blinkInterval)
+        clearTimeout(oneBlinkTimeOut)
+        clearTimeout(refreshLimit)
+        window.removeEventListener('mousemove', moveEyes)
+      }
+    },[ReyeOp])
 
     return(
     <svg id="face" style={{height:200,margin:"0 30px 20px"}} role="img" aria-label="Save" viewBox="0 0 149 203" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ export default function Face(props) {
     onFocus={()=>{expr(yesEx);setReyeOp(false)}}
     onBlur={()=>{expr(normEx);setReyeOp(true)}}
     >
-        <g fill={colors.drGreen}>
+        <g fill={colors.mdGreen}>
             <path id="LeyeSh" d={LeyeSh}/>
             <path id="Rshadow" d="M121.8 51.8L122.8 77L119.6 86.6L117.8 93.7L119.3 103.5L125.9 117.1L126.3 134.7L117.6 159.2L108.9 180.1L109.1 187.2L120.7 171.8L129.3 154.1L135.4 153.5L140.7 144L147.5 124L143.9 109.4L138.4 109.2L132.7 116.9L129.9 88.5L131.2 80.9L131.2 65.9L121.8 51.8Z"/>
             <path id="Lshadow" d="M26.9 69.4L28.1 85.7L23.6 100.8L25.6 129.1L32.6 163.4L48.6 181.5L51 189.9L30.2 167.5L22.9 151.7L18.7 114.6L17.1 100.2L23 86.4L21.3 71.4L31.9 54.2L26.9 69.4Z"/>
