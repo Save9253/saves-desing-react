@@ -25,7 +25,7 @@ function App() {
       <h1>Meet Save!</h1>
       <hr/>
       <div style={{display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'center'}}>
-        <Face/>
+        <Face vw={VW}/>
         <div style={{display:"grid",alignItems:'center'}}>
           <p>Save is a designer.</p>
           <p>He develops websites and apps,</p>
