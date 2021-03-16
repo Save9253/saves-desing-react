@@ -60,7 +60,6 @@ export default function Face(props) {
       window.addEventListener('mousemove',(event)=>{moveEyes(event)})
       let blinkInterval = setInterval(() => {blink()}, 4000);
       return()=>{
-        console.log('clean')
         clearInterval(blinkInterval)
         clearTimeout(oneBlinkTimeOut)
         clearTimeout(refreshLimit)
@@ -69,37 +68,54 @@ export default function Face(props) {
     },[ReyeOp])
 
     return(
-    <svg id="face" style={{height:200,margin:"0 30px 20px"}} role="img" aria-label="Save" viewBox="0 0 149 203" fill="none" xmlns="http://www.w3.org/2000/svg"
-    onMouseEnter={()=>{expr(yesEx);setReyeOp(false)}}
-    onMouseLeave={()=>{expr(normEx);setReyeOp(true)}}
-    onFocus={()=>{expr(yesEx);setReyeOp(false)}}
-    onBlur={()=>{expr(normEx);setReyeOp(true)}}
-    >
-        <g fill={colors.mdGreen}>
-            <path id="LeyeSh" d={LeyeSh}/>
-            <path id="Rshadow" d="M121.8 51.8L122.8 77L119.6 86.6L117.8 93.7L119.3 103.5L125.9 117.1L126.3 134.7L117.6 159.2L108.9 180.1L109.1 187.2L120.7 171.8L129.3 154.1L135.4 153.5L140.7 144L147.5 124L143.9 109.4L138.4 109.2L132.7 116.9L129.9 88.5L131.2 80.9L131.2 65.9L121.8 51.8Z"/>
-            <path id="Lshadow" d="M26.9 69.4L28.1 85.7L23.6 100.8L25.6 129.1L32.6 163.4L48.6 181.5L51 189.9L30.2 167.5L22.9 151.7L18.7 114.6L17.1 100.2L23 86.4L21.3 71.4L31.9 54.2L26.9 69.4Z"/>
-            <path id="nose" d={nose}/>
-            <path id="TLip" d={TLip}/>
-            <path id="BLip" d={BLip}/>
-        </g>
-        <g fill={colors.black}>
-            <path id="beard" d="M48.6 181.5L51 189.9L68.4 201.2L91.1 199.9L109.1 187.2L108.9 180.1L90 188.2L65.6 189.2L48.6 181.5Z"/>
-            <path id="hair" d="M132.7 116.9L129.9 88.5L131.2 80.9L131.2 65.9L119.1 47.6L115.8 31.5L105.9 17.3L112.6 31.4L115.3 46.8L105.7 44.5L98.1 25.2L76.1 13.2L94.3 25.4L102.2 45.3L96.2 44.7L82.1 32.7L54.9 31.9L79.8 34.9L92.1 46L79.7 47.4L65.9 52.8L55.1 60.4L31.9 54.2L21.3 71.4L23 86.4L17.1 100.2L18.7 114.6L9.1 107.3L7.4 61.8L10.2 41.2L14.7 38.1L14.6 31.3L26.2 16.8L41.7 8.2L46.9 8.6L50 4L68.8 1.2L89.2 3.5L94 7.5L96.2 5.6L117.2 12.3L131 28.8L133.4 36.3L136 39.8L141.1 58L142.1 87L138.4 109.2L132.7 116.9Z"/>
-            <path id="Lnosed" d="M66.1 135.8L71.1 135.4L74.6 136.9L69 137.4L66.1 135.8Z"/>
-            <path id="Rnosed" d={Rnosed}/>
-            <path id="Reye" d={Reye}/>
-            <path id="Leye" d={Leye}/>
-            <path id="mustch" d={mustch}/>
-            <path id="ReyeB" d={ReyeB}/>
-            <path id="LeyeB" d={LeyeB}/>
-        </g>
-        <path id="outline" stroke={colors.black} strokeOpacity="0.9" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" d="M9.1 107.3L7.4 61.8L10.2 41.2L14.7 38.1L14.6 31.3L26.2 16.8L41.7 8.2L46.9 8.6L50 4L68.8 1.2L89.2 3.5L94 7.5L96.2 5.6L117.2 12.3L131 28.8L133.4 36.3L136 39.8L141.1 58L142.1 87L138.4 109.2L143.9 109.4L147.5 124L140.7 144L135.4 153.5L129.3 154.1L120.7 171.8L109.1 187.2L91.1 199.9L68.4 201.2L51 189.9L30.2 167.5L22.9 151.7L16.9 152.1L8.4 144.3L1.5 124.3L4.1 109.8L9.1 107.3Z"/>
-    </svg>
+      <div style={{display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'center'}}>   
+        <svg id="face" style={{height:200,margin:"0 30px 20px"}} role="img" aria-label="Save" viewBox="0 0 149 203" fill="none" xmlns="http://www.w3.org/2000/svg"
+        onMouseEnter={()=>{expr(noEx)}}
+        onMouseLeave={()=>{expr(normEx)}}
+        onFocus={()=>{expr(noEx)}}
+        onBlur={()=>{expr(normEx)}}
+        >
+          <g fill={colors.mdGreen}>
+              <path id="LeyeSh" d={LeyeSh}/>
+              <path id="Rshadow" d="M121.8 51.8L122.8 77L119.6 86.6L117.8 93.7L119.3 103.5L125.9 117.1L126.3 134.7L117.6 159.2L108.9 180.1L109.1 187.2L120.7 171.8L129.3 154.1L135.4 153.5L140.7 144L147.5 124L143.9 109.4L138.4 109.2L132.7 116.9L129.9 88.5L131.2 80.9L131.2 65.9L121.8 51.8Z"/>
+              <path id="Lshadow" d="M26.9 69.4L28.1 85.7L23.6 100.8L25.6 129.1L32.6 163.4L48.6 181.5L51 189.9L30.2 167.5L22.9 151.7L18.7 114.6L17.1 100.2L23 86.4L21.3 71.4L31.9 54.2L26.9 69.4Z"/>
+              <path id="nose" d={nose}/>
+              <path id="TLip" d={TLip}/>
+              <path id="BLip" d={BLip}/>
+          </g>
+          <g fill={colors.black}>
+              <path id="beard" d="M48.6 181.5L51 189.9L68.4 201.2L91.1 199.9L109.1 187.2L108.9 180.1L90 188.2L65.6 189.2L48.6 181.5Z"/>
+              <path id="hair" d="M132.7 116.9L129.9 88.5L131.2 80.9L131.2 65.9L119.1 47.6L115.8 31.5L105.9 17.3L112.6 31.4L115.3 46.8L105.7 44.5L98.1 25.2L76.1 13.2L94.3 25.4L102.2 45.3L96.2 44.7L82.1 32.7L54.9 31.9L79.8 34.9L92.1 46L79.7 47.4L65.9 52.8L55.1 60.4L31.9 54.2L21.3 71.4L23 86.4L17.1 100.2L18.7 114.6L9.1 107.3L7.4 61.8L10.2 41.2L14.7 38.1L14.6 31.3L26.2 16.8L41.7 8.2L46.9 8.6L50 4L68.8 1.2L89.2 3.5L94 7.5L96.2 5.6L117.2 12.3L131 28.8L133.4 36.3L136 39.8L141.1 58L142.1 87L138.4 109.2L132.7 116.9Z"/>
+              <path id="Lnosed" d="M66.1 135.8L71.1 135.4L74.6 136.9L69 137.4L66.1 135.8Z"/>
+              <path id="Rnosed" d={Rnosed}/>
+              <path id="Reye" d={Reye}/>
+              <path id="Leye" d={Leye}/>
+              <path id="mustch" d={mustch}/>
+              <path id="ReyeB" d={ReyeB}/>
+              <path id="LeyeB" d={LeyeB}/>
+          </g>
+          <path id="outline" stroke={colors.black} strokeOpacity="0.9" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" d="M9.1 107.3L7.4 61.8L10.2 41.2L14.7 38.1L14.6 31.3L26.2 16.8L41.7 8.2L46.9 8.6L50 4L68.8 1.2L89.2 3.5L94 7.5L96.2 5.6L117.2 12.3L131 28.8L133.4 36.3L136 39.8L141.1 58L142.1 87L138.4 109.2L143.9 109.4L147.5 124L140.7 144L135.4 153.5L129.3 154.1L120.7 171.8L109.1 187.2L91.1 199.9L68.4 201.2L51 189.9L30.2 167.5L22.9 151.7L16.9 152.1L8.4 144.3L1.5 124.3L4.1 109.8L9.1 107.3Z"/>
+      </svg>
+      <div style={{display:"grid",alignItems:'center',margin:10}}>
+        <h1
+        onMouseEnter={()=>{setReyeOp(false);expr(yesEx)}}
+        onMouseLeave={()=>{setReyeOp(true);expr(normEx)}}
+        onFocus={()=>{setReyeOp(false);expr(yesEx)}}
+        onBlur={()=>{setReyeOp(true);expr(normEx)}}
+        >Saveliy Saunin</h1>
+        <hr/>
+        <h2>Hello, and welcome to my website!</h2>
+        <p onMouseEnter={()=>{expr(quEx)}}
+        onMouseLeave={()=>{expr(normEx)}}
+        onFocus={()=>{expr(quEx)}}
+        onBlur={()=>{expr(normEx)}}
+        >Feel free to move the coursour around or to press on things and see what happens.</p>
+      </div>
+    </div>
   )
 }
 
-/* const quEx = {
+const quEx = {
     LeyeSh:"M47.8 91.5L61.7 99.7L66.1 105.2L72.6 111.1L73.3 103.5L71.5 93.3L65.2 91.7L47.8 91.5Z",
     nose:"M88.6 97.3L98.2 96L116 95.3L94.5 100.3L89.4 107.7L90 122.3L96.5 129L93.9 138.8L81.8 140.4L76 140.4L62.9 137.8L60.4 128.7L63.8 134.5L73.1 132.3L80.6 134.7L87.3 132.3L89.4 126.8L85.2 119.5L85.1 106.7L88.6 97.3Z",
     TLip:"M66 159.7L67.2 157.4L76.7 152.4L79.2 152.7L82.1 151.4L96.7 151.7L98.1 154.2L96 153L83.5 154L80.1 154.9L76.8 155.2L68.7 158.3L66 159.7Z",
@@ -110,7 +126,7 @@ export default function Face(props) {
     mustch:"M57.4 156.6L58.9 151.2L73.7 146.2L79.5 146.2L83.8 144.7L103.5 146.1L104 151.5L101 149.1L84.9 147.8L79.6 149.5L74.3 150L60.3 154.6L57.4 156.6Z",
     ReyeB:"M88.6 97.3L92.4 90.3L115.7 90.7L122 96.1L116 95.3L98.2 96L88.6 97.3Z",
     LeyeB:"M35 93.4L46.3 87L67 84.4L71.5 93.3L65.2 91.7L47.8 91.5L35 93.4Z",
-} */
+}
 const yesEx = {
     LeyeSh:"M40.1 93.3L60.9 99.8L65.4 105.3L72.9 113.4L73.6 105.8L71.6 99.3L63.4 96.5L40.1 93.3Z",
     nose:"M85.8 103L92.6 100.1L113.4 96L93.8 100.5L89.9 104.9L89.3 120.9L94.6 128.1L93.6 136.8L81 139.1L75.2 139.5L62.1 138L59.6 128.8L62.8 134.3L72.3 132.4L79.8 133.4L87.7 130.9L87.9 126.9L84.5 119.6L84.7 106.1L85.8 103Z",
@@ -123,7 +139,7 @@ const yesEx = {
     ReyeB:"M85.8 103L89.9 95.4L114.9 89L123.9 98.8L113.4 96L92.6 100.1L85.8 103Z",
     LeyeB:"M30 98.1L39.2 86L64.9 91.4L71.6 99.3L63.4 96.5L40.1 93.3L30 98.1Z",
 }
-/* const noEx = {
+const noEx = {
     LeyeSh:"M40.4 93.1L61.2 99.6L65.7 105.1L73.2 113.2L73.9 105.6L71.9 99.1L63.7 96.3L40.4 93.1Z",
     nose:"M86.1 100.3L92.9 97.4L117.3 93.6L94.1 100.3L88.9 107.6L89.5 122.2L96 129L93.4 138.8L81.3 140.4L75.4 140.3L62.4 137.8L59.9 128.6L63.3 134.4L72.6 132.2L80.1 134.6L86.8 132.2L88.9 126.7L84.8 119.4L84.6 106.6L86.1 100.3Z",
     TLip:"M61.8 155L64 154L72.5 152.8L76.6 153.1L80.2 152.8L87.1 153.9L90.2 155.1L89.5 157.3L84.9 155.6L76.7 156.4L65.5 155.8L62.6 156.7L61.8 155Z",
@@ -134,7 +150,7 @@ const yesEx = {
     mustch:"M56.2 154.3L57.9 148L70.2 144.1L77.3 146.2L83.5 144.6L95 150.4L95.8 155.7L92.7 153.5L82.2 149.2L76.7 149.6L71.4 149.1L60.4 152.3L56.2 154.3Z",
     ReyeB:"M86.1 100.3L90.2 92.7L119.2 86.6L126.1 99.4L117.3 93.6L92.9 97.4L86.1 100.3Z",
     LeyeB:"M30.3 97.9L39.4 85.7L65.2 91.2L71.9 99.1L63.7 96.3L40.4 93.1L30.3 97.9Z",
-} */
+}
 const normEx = {
     LeyeSh:"M40.4 93.1L61.2 99.6L65.7 105.1L73.2 113.2L73.9 105.6L71.9 99.1L63.7 96.3L40.4 93.1Z",
     nose:"M86.1 100.3L92.9 97.4L117.3 93.6L94.1 100.3L88.9 107.6L89.5 122.2L96 129L93.4 138.8L81.3 140.4L75.4 140.3L62.4 137.8L59.9 128.6L63.3 134.4L72.6 132.2L80.1 134.6L86.8 132.2L88.9 126.7L84.8 119.4L84.6 106.6L86.1 100.3Z",

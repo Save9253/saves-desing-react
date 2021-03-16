@@ -37,22 +37,24 @@ p {
   text-align: justify;
 }
 h1 {
-  margin-block-start: 15px;
-  margin-block-end: 15px;
-}
-h2 {
-  margin-block-start: 12px;
-  margin-block-end: 12px;
-}
-h3 {
   margin-block-start: 10px;
   margin-block-end: 10px;
+}
+h2 {
+  margin-block-start: 8px;
+  margin-block-end: 8px;
+}
+h3 {
+  margin-block-start: 5px;
+  margin-block-end: 5px;
   font-size: 24px;
 }
-h1,
+p {
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+}
 h2,
 h3 {
-  text-align: center;
   font-weight: normal;
 }
 
@@ -74,8 +76,8 @@ ul {
 }
 hr {
   border: none;
-  border-bottom: solid 2px var(--mdGray);
-  margin: 20px 2px;
+  border-bottom: solid 2px var(--black);
+  margin: 10px 2px;
   width: 100%;
 }
 .hrP {
