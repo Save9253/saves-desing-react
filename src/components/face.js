@@ -109,7 +109,7 @@ export default function Face(props) {
         onMouseLeave={()=>{expr(normEx)}}
         onFocus={()=>{expr(quEx)}}
         onBlur={()=>{expr(normEx)}}
-        >Feel free to move the coursour around or to press on things and see what happens.</p>
+        >Move the cursor around or press on things and see what happens.</p>
       </div>
     </div>
   )
