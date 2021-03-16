@@ -1,13 +1,12 @@
 const colors = {
-    ltGreen:'#c3e06d',
-    mdGray:'#36343c',
+    ltGreen:'#b7ce63',
+    mdGray:'#353535',
     mdGreen:'#7c8a54',
-    drGreen:'#515a38',
-    black:'#1a1a1a',
-    red:'#b25c59',
-    ltRed: '#eb7f7b',
-    drRed:'#9a3d3a',
-    white50:'rgba(255,255,255,0.5)'
+    black:'#100B00',
+    cardinal:'c5283d',
+    red:'#B23A48',
+    white50:'rgba(255,255,255,0.5)',
+    white:'#F7F7FF'
 }
 
 const styles = {

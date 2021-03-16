@@ -1,9 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {colors} from './styles'
 
-
-
-export default function Face(props) {   
+export default function Face() {   
     function expr(expression){
         setLeyeSh(expression.LeyeSh)
         setNose(expression.nose)

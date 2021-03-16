@@ -1,27 +1,10 @@
 import React, {useState,useEffect} from 'react';
 import './components/App.css';
-import {colors} from './components/styles'
 import Face from './components/face' 
 import BigSocLink from './components/BigSocLink'
+import Projects from './components/Projects'
 
-function App() {
-  const [linkC,setLinkC] = useState({C:colors.black,BC:'transparent'})
-  const styles = {
-    linkDiv:{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 5,
-        flexWrap: 'wrap'
-    },
-    link:{
-      backgroundColor:linkC.BC,
-      padding: '8px 10px',
-      borderRadius: '2px',
-      fontSize: '20px',
-      fontFamily: '"Do Hyeon", sans-serif'
-    }
-  }
+export default function App() {
   const [VW, setVW] = useState(undefined)
   useEffect(() => {
     function handleResize() {
@@ -39,12 +22,11 @@ function App() {
 
   if(VW){document.documentElement.style.setProperty('--vw',VW+'px')}
   return (
-    <React.Fragment>
+    <div style={{width:VW}}>
       <Face/>
       <BigSocLink type='In' title="Connect with Saveliy on" link="https://www.linkedin.com/in/saveliy-saunin/"/>
       <BigSocLink type='Be' title="Check Saveliy's projects on" link="https://www.behance.net/saveliy_saunin"/>
-    </React.Fragment>
+      <Projects/>
+    </div>
   );
 }
-
-export default App;
