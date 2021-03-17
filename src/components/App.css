@@ -360,7 +360,10 @@ header #logoLink {
   outline: unset;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
+  .mobAlign{
+    text-align: center;
+  }
   .H {
     gap: 0;
   }

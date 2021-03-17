@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {colors} from './styles'
 
-export default function Face() {   
+export default function Face(props) {
   function expr(expression){
       setLeyeSh(expression.LeyeSh)
       setNose(expression.nose)
@@ -14,7 +14,6 @@ export default function Face() {
       setReyeB(expression.ReyeB)
       setLeyeB(expression.LeyeB)
   }   
-  
   const [LeyeSh,setLeyeSh] = useState(normEx.LeyeSh)
   const [nose,setNose] = useState(normEx.nose)
   const [TLip,setTLip] = useState(normEx.TLip) 
@@ -64,10 +63,9 @@ export default function Face() {
       window.removeEventListener('mousemove', moveEyes)
     }
   },[ReyeOp])
-
   return(
     <div style={{display:'flex',flexWrap:'wrap',alignItems:'center',justifyContent:'center'}}>   
-        <svg id="face" style={{height:200,margin:"0 30px 20px"}} role="img" aria-label="Save" viewBox="0 0 149 203" fill="none" xmlns="http://www.w3.org/2000/svg"
+      <svg id="face" style={{height:200,margin:"0 30px 20px"}} role="img" aria-label="Save" viewBox="0 0 149 203" fill="none" xmlns="http://www.w3.org/2000/svg"
         onMouseEnter={()=>{expr(noEx)}}
         onMouseLeave={()=>{expr(normEx)}}
         onFocus={()=>{expr(noEx)}}
@@ -95,14 +93,14 @@ export default function Face() {
           <path id="outline" stroke={colors.black} strokeOpacity="0.9" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" d="M9.1 107.3L7.4 61.8L10.2 41.2L14.7 38.1L14.6 31.3L26.2 16.8L41.7 8.2L46.9 8.6L50 4L68.8 1.2L89.2 3.5L94 7.5L96.2 5.6L117.2 12.3L131 28.8L133.4 36.3L136 39.8L141.1 58L142.1 87L138.4 109.2L143.9 109.4L147.5 124L140.7 144L135.4 153.5L129.3 154.1L120.7 171.8L109.1 187.2L91.1 199.9L68.4 201.2L51 189.9L30.2 167.5L22.9 151.7L16.9 152.1L8.4 144.3L1.5 124.3L4.1 109.8L9.1 107.3Z"/>
       </svg>
       <div style={{display:"grid",alignItems:'center',margin:10}}>
-        <h1
+        <h1 className='mobAlign'
         onMouseEnter={()=>{setReyeOp(false);expr(yesEx)}}
         onMouseLeave={()=>{setReyeOp(true);expr(normEx)}}
         onFocus={()=>{setReyeOp(false);expr(yesEx)}}
         onBlur={()=>{setReyeOp(true);expr(normEx)}}
         >Saveliy Saunin</h1>
         <hr/>
-        <h2>Hello, and welcome to my website!</h2>
+        <h2 className='mobAlign'>Hello, and welcome to my website!</h2>
         <p onMouseEnter={()=>{expr(quEx)}}
         onMouseLeave={()=>{expr(normEx)}}
         onFocus={()=>{expr(quEx)}}

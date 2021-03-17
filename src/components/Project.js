@@ -9,6 +9,7 @@ export default function Project(props) {
     return (
         <section style={{
         maxWidth:300,
+        margin:10
         }}>
             <a href={link}
             style={{
