@@ -21,6 +21,7 @@ export default function Projects() {
                     {key:'ven',desc:'Helps venue owners to earn money by renting out their venues through the app.'},
                 ]}
                 img={require('../assets/PartyLiveFavicon.png').default}
+                tags={['Node','Firebase','JavaScript','React']}
                 />
             </div>
         </section>
