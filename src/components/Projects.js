@@ -26,9 +26,9 @@ export default function Projects() {
                 <Project
                 title='PartyLive'
                 bullets={[
-                    {key:'book',desc:'Helps event hosts to find venues and entertainment.'},
-                    {key:'mus',desc:'Helps talented musicians and bands to earn money by performing at events.'},
-                    {key:'ven',desc:'Helps venue owners to earn money by renting out their venues through the app.'},
+                    {key:'book',desc:'Helps event hosts find venues and entertainment.'},
+                    {key:'mus',desc:'Helps talented musicians and bands earn money by performing at events.'},
+                    {key:'ven',desc:'Helps venue owners earn money by renting out their venues through the app.'},
                 ]}
                 img={require('../assets/PartyLiveFavicon.png').default}
                 tags={['Node','Firebase','JavaScript','ReactNative']}
