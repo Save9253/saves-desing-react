@@ -9,10 +9,10 @@ export default function Projects() {
             backgroundColor:colors.mdGray,
             width:'100%',
             padding:'10px 20px',
-            marginTop:20
+            marginTop:20,
         }}>
             <h2 style={{color:colors.org,textAlign:'center'}}>Projects</h2>
-            <div style={{display:'flex',flexWrap:'wrap',justifyContent:"center"}}>
+            <div style={{display:'flex',flexWrap:'wrap',justifyContent:"center",gap:20}}>
                 <Project
                 title='PartyLive'
                 bullets={[
@@ -21,7 +21,18 @@ export default function Projects() {
                     {key:'ven',desc:'Helps venue owners to earn money by renting out their venues through the app.'},
                 ]}
                 img={require('../assets/PartyLiveFavicon.png').default}
-                tags={['Node','Firebase','JavaScript','React']}
+                tags={['Node','Firebase','JavaScript','ReactNative']}
+                link={'https://partyliveapp.web.app/'}
+                />
+                <Project
+                title='Mark Cadavero'
+                bullets={[
+                    {key:'info',desc:'Displays contact information and rates'},
+                    {key:'rev',desc:'Allows customers to review the service provided'},
+                ]}
+                img={require('../assets/MarkCadaveroFavicon.png').default}
+                tags={['php','JavaScript','HTML','CSS']}
+                link={'https://www.markcadaverolcsw.com/'}
                 />
             </div>
         </section>
